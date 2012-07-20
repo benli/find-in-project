@@ -4,8 +4,8 @@
   <!-- interface-naming-policy project-wide -->
   <object class="GtkWindow" id="find-in-project">
     <property name="title" translatable="yes">Find in Project</property>
-    <property name="default_width">600</property>
-    <property name="default_height">500</property>
+    <property name="default_width">1200</property>
+    <property name="default_height">800</property>
     <property name="destroy_with_parent">True</property>
     <property name="type_hint">dialog</property>
     <child>
@@ -30,7 +30,7 @@
               <object class="GtkEntry" id="searchbox">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="invisible_char">●</property>
+                <property name="invisible_char">&#x25CF;</property>
                 <property name="primary_icon_stock">gtk-find</property>
                 <property name="secondary_icon_stock">gtk-clear</property>
                 <property name="secondary_icon_activatable">True</property>
@@ -91,7 +91,7 @@
                       <object class="GtkEntry" id="extbox">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">•</property>
+                        <property name="invisible_char">&#x2022;</property>
                         <property name="secondary_icon_stock">gtk-clear</property>
                       </object>
                       <packing>
@@ -147,6 +147,20 @@
                       <packing>
                         <property name="padding">5</property>
                         <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="sticky-window">
+                        <property name="label" translatable="yes">Sticky Window</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="xalign">0.51999998092651367</property>
+                        <property name="yalign">0.41999998688697815</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="position">3</property>
                       </packing>
                     </child>
                   </object>
@@ -221,4 +235,3 @@
     </child>
   </object>
 </interface>
-

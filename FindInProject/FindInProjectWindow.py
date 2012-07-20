@@ -94,6 +94,7 @@ class FindInProjectWindow:
         self._completion.set_text_column(0)
         self._message = self._builder.get_object("message")
         self._ignore_case = self._builder.get_object("ignore-case")
+        self._sticky_window = self._builder.get_object("sticky-window")
         self._show_context = self._builder.get_object("show-context")
         self._use_regex = self._builder.get_object("use-regex")
         self._extbox = self._builder.get_object("extbox")
@@ -116,7 +117,8 @@ class FindInProjectWindow:
             gedit.commands.load_uri(self._gedit_window, file_uri, gedit.encoding_get_current(), int(line_number))
             # dirty fix to make the file roll to a certain line
             gedit.commands.load_uri(self._gedit_window, file_uri, gedit.encoding_get_current(), int(line_number))
-            self._window.hide()
+            if not self._sticky_window.get_active():
+                self._window.hide()
             return True
 
     def window_key(self, widget, event):
